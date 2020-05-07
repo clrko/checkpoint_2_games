@@ -13,19 +13,19 @@
 }
 
 .GameCard .remove_btn {
-    width: fit-content;
+    width: 25px;
+    height: 25px;
     position: relative;
     cursor: pointer;
-    background: none;
+    padding:2px;
+    background-color: rgb(245, 50, 24);
     border:none;
+    border-radius: 50%;
     left: 235px; 
-    top: 0;
     margin-bottom: 0.5rem;
-}
-
-.GameCard .remove_icon {
     font-size: 1.2rem;
-    color: rgb(245, 50, 24);
+    font-weight: bold;
+    color: white;
 }
 
 .GameCard img {

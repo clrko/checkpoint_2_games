@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Game.css'
 
 const Game = ({name, image, rating, handleClick, id, screenshots}) => {
     return (
         <figure className="GameCard">
-            <button id={id} onClick={handleClick} className="remove_btn"><FontAwesomeIcon icon={faMinusSquare} className="remove_icon" /></button>
+            <button id={id} onClick={handleClick} className="remove_btn">X</button>
             <img src={image} alt={name} />
             <figcaption>
                 <blockquote>{name}</blockquote>

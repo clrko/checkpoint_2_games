@@ -18,10 +18,14 @@ const GameList = () => {
 
     const handleClick = (e) => {
         const listTemp = [...gameList]
+        console.log("listTemp est", listTemp)
+        console.log("e.target.id est", e.target.id)
         const index = listTemp.findIndex(item => item.id === parseInt(e.target.id))
+        console.log("index est", index)
         const remove = window.confirm("Are you sure you want to remove this game from the list?")
         if (remove) {
             listTemp.splice(index, 1)
+            console.log("splice est", listTemp.splice(index, 1))
             setGameList(listTemp)
         }
     }
