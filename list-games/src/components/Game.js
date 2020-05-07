@@ -2,7 +2,7 @@ import React from "react";
 
 import './Game.css'
 
-const Game = ({name, image, rating, handleClick}) => {
+const Game = ({name, image, rating, handleClick, id}) => {
     return (
         <figure className="GameCard">
             <img src={image} alt={name} />
@@ -10,7 +10,7 @@ const Game = ({name, image, rating, handleClick}) => {
                 <blockquote>{name}</blockquote>
                 <p>{rating}</p>
             </figcaption>
-            <button onClick={handleClick}>Remove</button>
+            <button onClick={() => handleClick(id)}>Remove</button>
         </figure>
     )
 }

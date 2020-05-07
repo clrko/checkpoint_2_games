@@ -24,7 +24,7 @@
     font-weight: bold;
 }
 
-.GameCard button {
+.GameCard input {
     width: fit-content;
     margin: 1em auto;
     cursor: pointer;

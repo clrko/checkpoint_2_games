@@ -5,7 +5,7 @@ import Game from "./Game";
 
 class GameList extends Component {
     state = {
-        GameFullList: []
+        gameList: []
     }
 
     componentDidMount() {
@@ -14,13 +14,23 @@ class GameList extends Component {
 
     getGameList = () => {
         axios.get("https://wild-games.herokuapp.com/api/v1")
-        .then(res => this.setState(() => ({GameFullList: res.data}), () => console.log(this.state.GameFullList)))
+        .then(res => this.setState(() => ({gameList: res.data})))
+    }
+
+    handleClick = (idCard) => {
+        const listTemp = this.state.gameList
+        const index = listTemp.findIndex(item => item.id === parseInt(idCard))
+        const remove = window.confirm("Are you sure you want to remove this game from the list?")
+        if (remove) {
+            listTemp.splice(index, 1)
+            this.setState({ gameList : listTemp})
+        }
     }
 
     render() {
         return (
             <div>
-                {this.state.GameFullList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} />)}
+                {this.state.gameList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={this.handleClick}/>)}
             </div>
         )
     }
