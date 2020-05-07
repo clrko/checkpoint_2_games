@@ -3,6 +3,8 @@ import axios from "axios";
 
 import Game from "./Game";
 
+import "./GameList.css"
+
 class GameList extends Component {
     state = {
         gameList: []
@@ -29,7 +31,7 @@ class GameList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="gameCard_wrapper">
                 {this.state.gameList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={this.handleClick}/>)}
             </div>
         )
