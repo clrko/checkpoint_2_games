@@ -5,7 +5,7 @@ const Screenshots = (props) => {
     return (
         <div>
             <Link to="/">Go back Home</Link>
-            {props.location.state.screenshots.map(pic => <img src={pic.image} alt="Screenshots" />)}
+            {props.location.state.screenshots.map(pic => <img src={pic.image} alt="Screenshots" key={pic.id}/>)}
         </div>
     )
 }
