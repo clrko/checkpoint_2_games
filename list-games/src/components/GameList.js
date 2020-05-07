@@ -11,7 +11,7 @@ const GameList = () => {
 
     const getGameList = () => {
         axios.get("https://wild-games.herokuapp.com/api/v1")
-        .then(res => setGameList(res.data))
+        .then(res => {setGameList(res.data); console.log("c'est1", res.data[0].short_screenshots)})
     }
     
     useEffect(getGameList,[])
@@ -35,9 +35,9 @@ const GameList = () => {
             <button onClick={handleShowBestGamesClick}>{showBestGames? "All Games" : "Best Games"}</button>
             <div className="gameCard_wrapper">
                 {!showBestGames ? 
-                gameList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick}/>)
+                gameList.map((game) => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick} screenshots={game.short_screenshots} />)
                 :
-                gameList.filter(game => game.rating >= 4.5).map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick}/>)
+                gameList.filter((game) => game.rating >= 4.5).map((game) => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick} screenshots={game.short_screenshots}/>)
                 }
             </div>
         </div>
