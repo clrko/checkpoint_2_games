@@ -7,6 +7,7 @@ import "./GameList.css"
 
 const GameList = () => {
     const [gameList, setGameList] = useState([])
+    const [showBestGames, setShowBestGames] = useState(false)
 
     const getGameList = () => {
         axios.get("https://wild-games.herokuapp.com/api/v1")
@@ -25,10 +26,22 @@ const GameList = () => {
         }
     }
 
+    const handleShowBestGamesClick = () => {
+        setShowBestGames(!showBestGames)
+    }
+
     return (
-        <div className="gameCard_wrapper">
-            {gameList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick}/>)}
+        <div>
+            <button onClick={handleShowBestGamesClick}>{showBestGames? "All Games" : "Best Games"}</button>
+            <div className="gameCard_wrapper">
+                {!showBestGames ? 
+                gameList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick}/>)
+                :
+                gameList.filter(game => game.rating >= 4.5).map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick}/>)
+                }
+            </div>
         </div>
+        
     )
 }
 
