@@ -1,4 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+
+.gamelist_container {
+    display: block;
+    padding:2rem;
+}
 .gameCard_wrapper {
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: rgb(245,197,24);
+    font-size: 2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+}
+
+.best_game_btn {
+    color: #f7f7f7;
+    border: 2px solid #f7f7f7;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    letter-spacing: 0.1rem;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.best_game_btn:hover {
+    background-color: rgb(18, 18, 18);
+    cursor: pointer;
 }
