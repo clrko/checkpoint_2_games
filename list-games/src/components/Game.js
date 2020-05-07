@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './Game.css'
 
 const Game = ({name, image, rating, handleClick, id, screenshots}) => {
-    console.log("screen", screenshots)
     return (
         <figure className="GameCard">
             <img src={image} alt={name} />
@@ -13,7 +12,7 @@ const Game = ({name, image, rating, handleClick, id, screenshots}) => {
                 <p>{rating}</p>
             </figcaption>
             <button id={id} onClick={handleClick}>Remove</button>
-            <Link to={{ pathname: `/game/:${id}`, state: {screenshots} }} >Additional images</Link>
+            <Link to={{ pathname: `/game/screenshots/:${id}`, state: {screenshots} }} >Additional images</Link>
         </figure>
     )
 }

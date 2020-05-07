@@ -11,7 +11,7 @@ const GameList = () => {
 
     const getGameList = () => {
         axios.get("https://wild-games.herokuapp.com/api/v1")
-        .then(res => {setGameList(res.data); console.log("c'est1", res.data[0].short_screenshots)})
+        .then(res => setGameList(res.data))
     }
     
     useEffect(getGameList,[])

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import GameList from './components/GameList'
-import GameImages from './components/GameImages'
+import Screenshots from './components/Screenshots'
 
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={GameList}/>
-        <Route path="/game/:id" component={GameImages} />
+        <Route path="/game/screenshots/:id" component={Screenshots} />
       </Switch>
     </Router>
   )
