@@ -34,7 +34,7 @@ const GameList = () => {
         <div className="gamelist_container">
             <h1>What to play</h1>
             <button className="best_game_btn" onClick={handleShowBestGamesClick}>{showBestGames? "All Games" : "Best Games"}</button>
-            <div className="gameCard_wrapper">
+            <div className="gamecard_wrapper">
                 {!showBestGames ? 
                 gameList.map((game) => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} id={game.id} handleClick={handleClick} screenshots={game.short_screenshots} />)
                 :
