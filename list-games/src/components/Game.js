@@ -2,13 +2,13 @@ import React from "react";
 
 import './Game.css'
 
-const Game = () => {
+const Game = ({name, image, rating}) => {
     return (
         <figure className="GameCard">
-            <img src="https://picsum.photos/200/300" alt="laceholder" />
+            <img src={image} alt={name} />
             <figcaption>
-                <blockquote>game name</blockquote> {/* name */} 
-                <p>rating</p> {/* rating */}
+                <blockquote>{name}</blockquote>
+                <p>{rating}</p>
             </figcaption>
         </figure>
     )
