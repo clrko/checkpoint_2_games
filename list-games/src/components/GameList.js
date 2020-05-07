@@ -20,7 +20,7 @@ class GameList extends Component {
     render() {
         return (
             <div>
-                {this.state.GameFullList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} />)}
+                {this.state.GameFullList.map(game => <Game name={game.name} image={game.background_image} rating={game.rating} key={game.id} />)}
             </div>
         )
     }
