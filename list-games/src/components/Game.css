@@ -1,0 +1,25 @@
+.GameCard {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25em;
+    width: 200px;
+    border: 1px solid #f8f8f8;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    font-size: 1.2em;
+    color:white
+}
+
+.GameCard img {
+    display: flex;
+    max-height: 300px;
+}
+
+.GameCard figcaption {
+    background-color: rgb(26, 26, 26);
+}
+
+.GameCard blockquote {
+    margin: 1rem 0;
+    font-weight: bold;
+}
