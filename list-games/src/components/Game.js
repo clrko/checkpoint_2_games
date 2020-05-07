@@ -10,7 +10,7 @@ const Game = ({name, image, rating, handleClick, id}) => {
                 <blockquote>{name}</blockquote>
                 <p>{rating}</p>
             </figcaption>
-            <button onClick={() => handleClick(id)}>Remove</button>
+            <button id={id} onClick={handleClick}>Remove</button>
         </figure>
     )
 }
