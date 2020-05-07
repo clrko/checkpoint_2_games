@@ -15,7 +15,7 @@ const Game = ({name, image, rating, handleClick, id, screenshots}) => {
                 <blockquote>{name}</blockquote>
                 <p><FontAwesomeIcon icon={faStar} className="star_icon" />{rating}</p>
             </figcaption>
-            <Link to={{ pathname: `/game/screenshots/:${id}`, state: {screenshots} }} ><button id={id} onClick={handleClick} className="more_btn">More pictures</button></Link>
+            <div><Link to={{ pathname: `/game/screenshots/:${id}`, state: {screenshots} }}><button className="more_btn">More pictures</button></Link></div>
         </figure>
     )
 }
