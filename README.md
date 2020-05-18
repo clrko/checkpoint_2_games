@@ -2,7 +2,7 @@
 
 ## Main information
 
-The app is available here: 
+The app is available here: <https://listgames.netlify.app/>
 
 This app has been developed during the second Wild Code School checkpoint on Front End developement. The aim for us is to validate our skills and identify the notions we need to review.
 
